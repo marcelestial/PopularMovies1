@@ -3,7 +3,10 @@ package com.spaceside.marcel.popularmovies;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.GridView;
+import android.widget.ImageButton;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,15 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] fakedata = {"movie1", "movie2", "movie3", "movie4"};
-        List<String> data = new ArrayList<>(Arrays.asList(fakedata));
-
-        ArrayAdapter<String> posterAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                fakedata);
-
-        ListView listView = (ListView) findViewById(R.id.listview_posters);
-        listView.setAdapter(posterAdapter);
+        ImageButton doot = (ImageButton) findViewById(R.id.doot);
+        Picasso.with(this).load("http://www.sfzoo.org/images/gallery/turkeyvulture/img_turkeyvulture_mh_large.jpg").into(doot);
+        
     }
 }
